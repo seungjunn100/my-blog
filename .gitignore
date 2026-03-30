@@ -1,0 +1,8 @@
+node_modules
+dist
+.vite
+.DS_Store
+.history
+
+# 임시
+.generated
