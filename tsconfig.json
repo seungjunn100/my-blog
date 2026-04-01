@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vite/client"], // Vite 전용 기능(import.meta.glob 등)을 TypeScript에서 인식하도록 하기 위한 타입 설정
     "target": "ES2020", // TypeScript가 어떤 자바스크립트 문법 수준까지 사용할지 설정
     "useDefineForClassFields": true, // 클래스 필드를 최신 JS 표준 방식으로 처리
     

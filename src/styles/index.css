@@ -1,0 +1,8 @@
+@import "./reset.css";
+@import "./layout.css";
+@import "./markdown.css";
+@import "./components/layout.css";
+@import "./components/notes.css";
+@import "./pages/about.css";
+@import "./pages/home.css";
+@import "./pages/notes.css";
