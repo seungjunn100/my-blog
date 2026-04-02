@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer>
-      <p>© 2026 baek.log</p>
+    <footer className="site-footer">
+      <p className="site-footer__copy">© 2026 baek.log</p>
     </footer>
   );
 }

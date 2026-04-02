@@ -27,7 +27,7 @@ export default function NotesPage() {
 
   return (
     <section>
-      <h2>Notes</h2>
+      <h2 className="sr-only">Notes</h2>
 
       <NoteFilter selectedCategory={selectedCategory} categories={categories} onSelectCategory={setSelectedCategory} />
 

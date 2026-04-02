@@ -16,12 +16,12 @@ const categoryLabelMap: Record<NoteItem['category'], string> = {
 
 export default function NoteCard({ note }: NoteCardProps) {
   return (
-    <li className="note-card">
-      <Link className="note-card__link" to={`/notes/${note.category}/${note.slug}`}>
-        [{categoryLabelMap[note.category]}] {note.title}
+    <li className="note-list__item">
+      <Link className="note-list__link" to={`/notes/${note.category}/${note.slug}`}>
+        {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
       </Link>
       
-      <time className="note-card__date" dateTime={note.date}>
+      <time className="note-list__date" dateTime={note.date}>
         {note.date}
       </time>
     </li>

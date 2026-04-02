@@ -4,7 +4,7 @@ import { NoteDetail, NoteItem, NoteItemCategory } from "../types/note";
 type MarkdownModule = string;
 
 // 허용된 카테고리 목록
-const noteCategories: NoteItemCategory[] = [
+const categories: NoteItemCategory[] = [
   "javascript",
   "typescript",
   "react",
@@ -15,7 +15,7 @@ const noteCategories: NoteItemCategory[] = [
 
 // 문자열이 유효한 카테고리인지 검사하는 함수 (타입 가드)
 function isNoteCategory(value: string): value is NoteItemCategory {
-  return noteCategories.includes(value as NoteItemCategory);
+  return categories.includes(value as NoteItemCategory);
 }
 
 /**
@@ -156,6 +156,11 @@ export function getAllNotes(): NoteItem[] {
       slug,
     })
   );
+}
+
+// 최신 노트 5개만 반환
+export function getRecentNotes(limit = 5) {
+  return getAllNotes().slice(0, limit);
 }
 
 // 특정 카테고리에 해당하는 노트 목록 반환
