@@ -7,7 +7,7 @@ slug: use-memo
 thumbnail: /thumbnails/use-memo.png
 ---
 
-![browser rendering](/thumbnail/use-memo.png)
+![browser rendering](/thumbnails/use-memo.png)
 
 ## useMemo란?
 
