@@ -31,6 +31,7 @@ export default function NotesPage() {
       <PageMeta
         title="노트 목록"
         description="JavaScript, TypeScript, React, Next.js, Web, AI 관련 학습 내용을 정리한 노트 목록 페이지입니다."
+        path="/notes"
       />
 
       <h2 className="sr-only">Notes</h2>

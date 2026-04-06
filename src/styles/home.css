@@ -25,7 +25,7 @@
   padding-left: 1.7rem;
 
   .home-notes__recent-item {
-    list-style-type: circle;
+    list-style: circle;
 
     .home-notes__recent-inner {
       display: flex;
