@@ -4,6 +4,7 @@ description: TypeScript의 기본 타입 정리
 date: 2026-03-30
 category: typescript
 slug: ts-basic
+thumbnail: /thumbnails/use-memo.png
 ---
 
 ## TypeScript란?

@@ -4,6 +4,7 @@ description: 브라우저가 화면을 그리는 과정 정리
 date: 2026-03-28
 category: web
 slug: browser-rendering
+thumbnail: /thumbnails/use-memo.png
 ---
 
 ## 렌더링 과정

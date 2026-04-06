@@ -113,13 +113,15 @@ function parseNoteFile(filePath: string, rawContent: string): NoteDetail {
   const date = data.date;
   const category = data.category;
   const slug = data.slug;
+  const thumbnail = data.thumbnail;
 
   if (
     typeof title !== "string" ||
     typeof description !== "string" ||
     typeof date !== "string" ||
     typeof category !== "string" ||
-    typeof slug !== "string"
+    typeof slug !== "string" ||
+    typeof thumbnail !== "string"
   ) {
     throw new Error(`Invalid frontmatter in file: ${filePath}`);
   }
@@ -134,6 +136,7 @@ function parseNoteFile(filePath: string, rawContent: string): NoteDetail {
     date,
     category,
     slug,
+    thumbnail,
     content,
   };
 }
@@ -148,12 +151,13 @@ function getAllNoteDetails(): NoteDetail[] {
 // 전체 노트 목록 반환
 export function getAllNotes(): NoteItem[] {
   return getAllNoteDetails()
-    .map(({ title, description, category, date, slug }) => ({
+    .map(({ title, description, category, date, slug, thumbnail }) => ({
       title,
       description,
       category,
       date,
       slug,
+      thumbnail,
     })
   );
 }

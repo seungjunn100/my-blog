@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { getNoteByCategoryAndSlug } from "../lib/notes";
 import { NoteItemCategory } from "../types/note";
 import rehypeHighlight from "rehype-highlight";
+import { PageMeta } from "../components/common/PageMeta";
 
 const categories: NoteItemCategory[] = [
   "javascript",
@@ -32,6 +33,11 @@ export default function NoteDetailPage() {
   if (!category || !slug) {
     return (
       <section className="invalid-access">
+        <PageMeta
+          title="잘못된 접근"
+          description="잘못된 경로로 접근한 페이지입니다."
+          path="/notes"
+        />
         <h1 className="invalid-access__title">잘못된 접근입니다.</h1>
         <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
       </section>
@@ -41,6 +47,11 @@ export default function NoteDetailPage() {
   if (!isNoteCategory(category)) {
     return (
       <section className="invalid-category">
+        <PageMeta
+          title="유효하지 않은 카테고리"
+          description="유효하지 않은 카테고리 경로입니다."
+          path="/notes"
+        />
         <h1 className="invalid-category__title">유효하지 않은 카테고리입니다.</h1>
         <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
       </section>
@@ -52,6 +63,11 @@ export default function NoteDetailPage() {
   if (!note) {
     return (
       <section className="note-empty">
+        <PageMeta
+          title="존재하지 않은 노트"
+          description="요청한 게시글을 찾을 수 없습니다."
+          path="/notes"
+        />
         <h1 className="note-empty__title">노트를 찾을 수 없습니다.</h1>
         <p className="note-empty__description">존재하지 않거나 삭제된 글입니다.</p>
         <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
@@ -61,16 +77,27 @@ export default function NoteDetailPage() {
   
   return (
     <section className="note-detail">
-      <h1 className="note-detail__title">
-        {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
-      </h1>
-      <time className="note-detail__date" dateTime={note.date}>{note.date}</time>
+      <PageMeta
+        title={note.title}
+        description={note.description}
+        path={`/notes/${note.category}/${note.slug}`}
+        image={note.thumbnail}
+      />
 
-      <article className="markdown-body">
-        <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{note.content}</ReactMarkdown>
+      <article className="note-detail__article">
+        <header className="note-detail__header">
+          <h1 className="note-detail__title">
+            {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
+          </h1>
+          <time className="note-detail__date" dateTime={note.date}>{note.date}</time>
+        </header>
+
+        <div className="markdown-body">
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{note.content}</ReactMarkdown>
+        </div>
+
+        <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
       </article>
-
-      <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
     </section>
   );
 }

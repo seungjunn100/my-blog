@@ -4,6 +4,7 @@ description: Next.js App Router 기반 라우팅 구조 이해
 date: 2026-04-02
 category: nextjs
 slug: next-routing
+thumbnail: /thumbnails/use-memo.png
 ---
 
 ## App Router란?

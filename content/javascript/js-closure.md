@@ -4,6 +4,7 @@ description: 자바스크립트 클로저 개념 이해
 date: 2026-04-01
 category: javascript
 slug: js-closure
+thumbnail: /thumbnails/use-memo.png
 ---
 
 ## 클로저란?

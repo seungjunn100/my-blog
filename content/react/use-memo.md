@@ -4,9 +4,10 @@ description: useMemo의 개념과 언제 사용하면 좋은지 정리한 글
 date: 2026-04-01
 category: react
 slug: use-memo
+thumbnail: /thumbnails/use-memo.png
 ---
 
-![browser rendering](../../public/browser-rendering.png)
+![browser rendering](/thumbnail/use-memo.png)
 
 ## useMemo란?
 

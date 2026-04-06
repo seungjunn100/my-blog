@@ -8,6 +8,7 @@ export interface NoteItem {
   category: NoteItemCategory;
   date: string;
   slug: string;
+  thumbnail: string;
 }
 
 export interface NoteDetail extends NoteItem {
