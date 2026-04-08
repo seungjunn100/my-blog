@@ -29,12 +29,12 @@ export default function NotesPage() {
   return (
     <>
       <PageMeta
-        title="노트 목록"
+        title="Notes"
         description="JavaScript, TypeScript, React, Next.js, Web, AI 관련 학습 내용을 정리한 노트 목록 페이지입니다."
         path="/notes"
       />
 
-      <section>
+      <section className="notes">
         <h2 className="sr-only">Notes</h2>
 
         <NoteFilter selectedCategory={selectedCategory} categories={categories} onSelectCategory={setSelectedCategory} />

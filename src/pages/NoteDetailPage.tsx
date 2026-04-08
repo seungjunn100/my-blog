@@ -32,30 +32,34 @@ export default function NoteDetailPage() {
 
   if (!category || !slug) {
     return (
-      <section className="invalid-access">
+      <>
         <PageMeta
           title="잘못된 접근"
           description="잘못된 경로로 접근한 페이지입니다."
           path="/notes"
         />
-        <h1 className="invalid-access__title">잘못된 접근입니다.</h1>
-        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
-      </section>
+        <section className="invalid-access">
+          <h1 className="invalid-access__title">잘못된 접근입니다.</h1>
+          <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
+        </section>
+      </>
     );
   }
 
   if (!isNoteCategory(category)) {
     return (
-      <section className="invalid-category">
+      <>
         <PageMeta
           title="유효하지 않은 카테고리"
           description="유효하지 않은 카테고리 경로입니다."
           path="/notes"
         />
-        <h1 className="invalid-category__title">유효하지 않은 카테고리입니다.</h1>
-        <p className="invalid-category__description">입력한 주소가 잘못되었거나, 유효하지 않은 카테고리입니다.</p>
-        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
-      </section>
+        <section className="invalid-category">
+          <h1 className="invalid-category__title">유효하지 않은 카테고리입니다.</h1>
+          <p className="invalid-category__description">입력한 주소가 잘못되었거나, 유효하지 않은 카테고리입니다.</p>
+          <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
+        </section>
+      </>
     );
   }
 
@@ -63,16 +67,18 @@ export default function NoteDetailPage() {
 
   if (!note) {
     return (
-      <section className="note-empty">
+      <>
         <PageMeta
           title="존재하지 않은 노트"
           description="요청한 게시글을 찾을 수 없습니다."
           path="/notes"
         />
-        <h1 className="note-empty__title">노트를 찾을 수 없습니다.</h1>
-        <p className="note-empty__description">입력한 주소가 잘못되었거나, 존재하지 않거나, 삭제된 글입니다.</p>
-        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
-      </section>
+        <section className="note-empty">
+          <h1 className="note-empty__title">노트를 찾을 수 없습니다.</h1>
+          <p className="note-empty__description">입력한 주소가 잘못되었거나, 존재하지 않거나, 삭제된 글입니다.</p>
+          <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
+        </section>
+      </>
     );
   }
   

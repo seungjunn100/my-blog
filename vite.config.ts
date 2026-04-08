@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react' // Vite가 React 프로젝트를 이해
 export default defineConfig({
   plugins: [
     react(), // React 문법(JSX/TSX)을 사용할 수 있게 해주는 플러그인
-  ], 
+  ],
 })
