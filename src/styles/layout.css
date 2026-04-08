@@ -102,3 +102,34 @@ body {
     line-height: 1;
   }
 }
+
+/* back link */
+.back-link {
+  display: inline-block;
+  margin-top: 3.5rem;
+  text-decoration: underline;
+  text-underline-position: under;
+  color: var(--color-highlight);
+}
+
+/* not found */
+.not-found {
+  .not-found__code {
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+  }
+
+  .not-found__title {
+    margin: 1rem 0;
+    font-size: var(--font-size-xxl);
+  }
+
+  .not-found__description {
+    font-size: var(--font-size-base);
+  }
+
+  .not-found__links {
+    display: flex;
+    gap: 2rem;
+  }
+}

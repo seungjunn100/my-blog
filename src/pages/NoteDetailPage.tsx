@@ -39,7 +39,7 @@ export default function NoteDetailPage() {
           path="/notes"
         />
         <h1 className="invalid-access__title">잘못된 접근입니다.</h1>
-        <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
+        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
       </section>
     );
   }
@@ -53,7 +53,8 @@ export default function NoteDetailPage() {
           path="/notes"
         />
         <h1 className="invalid-category__title">유효하지 않은 카테고리입니다.</h1>
-        <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
+        <p className="invalid-category__description">입력한 주소가 잘못되었거나, 유효하지 않은 카테고리입니다.</p>
+        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
       </section>
     );
   }
@@ -69,35 +70,38 @@ export default function NoteDetailPage() {
           path="/notes"
         />
         <h1 className="note-empty__title">노트를 찾을 수 없습니다.</h1>
-        <p className="note-empty__description">존재하지 않거나 삭제된 글입니다.</p>
-        <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
+        <p className="note-empty__description">입력한 주소가 잘못되었거나, 존재하지 않거나, 삭제된 글입니다.</p>
+        <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
       </section>
     );
   }
   
   return (
-    <section className="note-detail">
+    <>
       <PageMeta
         title={note.title}
         description={note.description}
         path={`/notes/${note.category}/${note.slug}`}
         image={note.thumbnail}
+        type="article"
       />
 
-      <article className="note-detail__article">
-        <header className="note-detail__header">
-          <h1 className="note-detail__title">
-            {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
-          </h1>
-          <time className="note-detail__date" dateTime={note.date}>{note.date}</time>
-        </header>
+      <section className="note-detail">
+        <article className="note-detail__article">
+          <header className="note-detail__header">
+            <h1 className="note-detail__title">
+              {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
+            </h1>
+            <time className="note-detail__date" dateTime={note.date}>{note.date}</time>
+          </header>
 
-        <div className="markdown-body">
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{note.content}</ReactMarkdown>
-        </div>
+          <div className="markdown-body">
+            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{note.content}</ReactMarkdown>
+          </div>
 
-        <Link to="/notes" className="back-notes">← 목록으로 돌아가기</Link>
-      </article>
-    </section>
+          <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
+        </article>
+      </section>
+    </>
   );
 }
