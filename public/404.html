@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <title>404 Not Found</title>
+  </head>
+  <body>
+    <div id="root">
+      <header className="site-header">
+        <div className="site-header__inner">
+          <h1 className="site-header__logo">junn.dev</h1>
+          <nav className="site-header__nav">
+            <ul className="site-header__ul">
+              <li className="site-header__list">
+                <NavLink to="/" className="site-header__link">Home</NavLink>
+              </li>
+              <li className="site-header__list">
+                <NavLink to="/notes" className="site-header__link">Notes</NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="site-main">
+        <section className="not-found">
+          <p className="not-found__code">404</p>
+          <h1 className="not-found__title">페이지를 찾을 수 없습니다.</h1>
+          <p className="not-found__description">입력한 주소가 잘못되었거나, 존재하지 않거나, 삭제되었거나, 이동된 페이지일 수 있습니다.</p>
+
+          <div className="not-found__links">
+            <Link to="/" className="back-link">← Home</Link>
+            <Link to="/notes" className="back-link">← Notes</Link>
+          </div>
+        </section>
+      </main>
+      <footer className="site-footer">
+        <p className="site-footer__copy">© 2026 junn.dev</p>
+      </footer>
+    </div>
+  </body>
+</html>
