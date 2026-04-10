@@ -36,13 +36,17 @@ export default function HomePage() {
         <ul className="home-notes__recent-list">
           {getRecentNotes().map((note) => (
             <li key={`${note.category}-${note.slug}`} className="home-notes__recent-item">
-              <Link to={`/notes/${note.category}/${note.slug}`} className="home-notes__recent-link">
-                {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
-              </Link>
+              <div className="home-notes__recent-inner">
+                <div className="home-notes__recent-inner-flex">
+                  <Link to={`/notes/${note.category}/${note.slug}`} className="home-notes__recent-link">
+                    {`[ ${categoryLabelMap[note.category]} ] ${note.title}`}
+                  </Link>
 
-              <time className="home-notes__recent-date" dateTime={note.date}>
-                {note.date}
-              </time>
+                  <time className="home-notes__recent-date" dateTime={note.date}>
+                    {note.date}
+                  </time>
+                </div>
+              </div>
             </li>
           ))}
         </ul>

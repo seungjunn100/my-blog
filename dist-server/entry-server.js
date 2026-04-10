@@ -234,17 +234,23 @@ function HomePage() {
 					children: "Recent Notes"
 				}), /* @__PURE__ */ jsx("ul", {
 					className: "home-notes__recent-list",
-					children: getRecentNotes().map((note) => /* @__PURE__ */ jsxs("li", {
+					children: getRecentNotes().map((note) => /* @__PURE__ */ jsx("li", {
 						className: "home-notes__recent-item",
-						children: [/* @__PURE__ */ jsx(Link, {
-							to: `/notes/${note.category}/${note.slug}`,
-							className: "home-notes__recent-link",
-							children: `[ ${categoryLabelMap$3[note.category]} ] ${note.title}`
-						}), /* @__PURE__ */ jsx("time", {
-							className: "home-notes__recent-date",
-							dateTime: note.date,
-							children: note.date
-						})]
+						children: /* @__PURE__ */ jsx("div", {
+							className: "home-notes__recent-inner",
+							children: /* @__PURE__ */ jsxs("div", {
+								className: "home-notes__recent-inner-flex",
+								children: [/* @__PURE__ */ jsx(Link, {
+									to: `/notes/${note.category}/${note.slug}`,
+									className: "home-notes__recent-link",
+									children: `[ ${categoryLabelMap$3[note.category]} ] ${note.title}`
+								}), /* @__PURE__ */ jsx("time", {
+									className: "home-notes__recent-date",
+									dateTime: note.date,
+									children: note.date
+								})]
+							})
+						})
 					}, `${note.category}-${note.slug}`))
 				})]
 			}),

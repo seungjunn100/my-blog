@@ -25,11 +25,14 @@
   padding-left: 1.7rem;
 
   .home-notes__recent-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
     list-style: circle;
+
+    .home-notes__recent-inner-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 
   .home-notes__recent-link {
