@@ -7,7 +7,7 @@ slug: hosting
 thumbnail: /thumbnails/hosting.png
 ---
 
-![호스팅(Hosting)](../../public/thumbnails/hosting.png)
+![호스팅(Hosting)](/thumbnails/hosting.png)
 
 ## 호스팅(Hosting)
 
