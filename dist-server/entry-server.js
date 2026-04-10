@@ -1,7 +1,7 @@
 import { renderToString } from "react-dom/server";
-import { Link, NavLink, Outlet, RouterProvider, createMemoryRouter, useLocation, useParams } from "react-router";
+import { Link, NavLink, Outlet, RouterProvider, createMemoryRouter, useParams } from "react-router";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import { useLayoutEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 //#region src/components/layout/Footer.tsx
@@ -66,20 +66,8 @@ function RootLayout() {
 	] });
 }
 //#endregion
-//#region content/javascript/js-closure.md?raw
-var js_closure_default = "---\r\ntitle: 클로저(Closure) 정리\r\ndescription: 자바스크립트 클로저 개념 이해\r\ndate: 2026-04-01\r\ncategory: javascript\r\nslug: js-closure\r\nthumbnail: /thumbnails/use-memo.png\r\n---\r\n\r\n## 클로저란?\r\n\r\n클로저는 함수가 선언될 당시의 외부 변수를 기억하는 개념이다.\r\n\r\n## 예시\r\n\r\n```js\r\nfunction outer() {\r\n  let count = 0;\r\n\r\n  return function inner() {\r\n    count++;\r\n    return count;\r\n  };\r\n}\r\n\r\nconst counter = outer();\r\nconsole.log(counter()); // 1\r\nconsole.log(counter()); // 2";
-//#endregion
-//#region content/nextjs/next-routing.md?raw
-var next_routing_default = "---\r\ntitle: Next.js 라우팅 구조\r\ndescription: Next.js App Router 기반 라우팅 구조 이해\r\ndate: 2026-04-02\r\ncategory: nextjs\r\nslug: next-routing\r\nthumbnail: /thumbnails/use-memo.png\r\n---\r\n\r\n## App Router란?\r\n\r\nNext.js의 App Router는 파일 기반 라우팅 시스템이다.\r\n\r\n## 구조\r\n\r\n```txt\r\napp/\r\n  page.tsx        → /\r\n  blog/\r\n    page.tsx      → /blog\r\n```\r\n\r\n## 특징\r\n\r\n- 파일 기반 라우팅\r\n- 서버 컴포넌트 지원\r\n- 레이아웃 분리 가능\r\n\r\n## 정리\r\n\r\nApp Router는 기존보다 더 직관적인 구조를 제공한다.";
-//#endregion
-//#region content/react/use-memo.md?raw
-var use_memo_default = "---\r\ntitle: useMemo 정리\r\ndescription: useMemo의 개념과 언제 사용하면 좋은지 정리한 글\r\ndate: 2026-04-01\r\ncategory: react\r\nslug: use-memo\r\nthumbnail: /thumbnails/use-memo.png\r\n---\r\n\r\n![browser rendering](/thumbnails/use-memo.png)\r\n\r\n## useMemo란?\r\n\r\nuseMemo는 계산 결과를 메모이제이션하는 React Hook이다.\r\n\r\n### 기본 문법\r\n\r\n```tsx\r\nconst memoizedValue = useMemo(() => {\r\n  return computeExpensiveValue(a, b);\r\n}, [a, b]);\r\n```\r\n\r\n### 정리\r\n\r\n무조건 사용하는 것이 아니라,\r\n계산 비용이 크거나 참조 안정성이 중요할 때 고려하는 것이 좋다.\r\n\r\n이 단계에서는 아직 이 파일을 앱에서 읽지 않아도 괜찮아.  \r\n일단 **파일 형식 자체를 먼저 정하는 것**이 중요해.\r\n\r\n## B. `mockNotes.ts` 데이터도 이 형식에 맞춰 의식적으로 유지하기\r\n\r\n예를 들면 지금 mock 데이터도 최대한 markdown 파일 구조랑 비슷하게 생각하면 좋아.\r\n\r\n```ts\r\n{\r\n  title,\r\n  description,\r\n  category,\r\n  date,\r\n  slug,\r\n  content\r\n}\r\n```\r\n\r\n---\r\n\r\n> 즉 나중에 markdown 파일을 읽어오면 결국 이 객체 모양으로 바뀌어 들어올 거라고 생각하면 돼.";
-//#endregion
-//#region content/typescript/ts-basic.md?raw
-var ts_basic_default = "---\r\ntitle: TypeScript 기본 타입\r\ndescription: TypeScript의 기본 타입 정리\r\ndate: 2026-03-30\r\ncategory: typescript\r\nslug: ts-basic\r\nthumbnail: /thumbnails/use-memo.png\r\n---\r\n\r\n## TypeScript란?\r\n\r\nTypeScript는 JavaScript에 타입을 추가한 언어이다.\r\n\r\n## 기본 타입\r\n\r\n```ts\r\nlet name: string = \"Junn\";\r\nlet age: number = 30;\r\nlet isActive: boolean = true;\r\n```\r\n\r\n## 장점\r\n\r\n- 타입 안정성\r\n- 코드 가독성 향상\r\n- 유지보수 용이\r\n\r\n## 정리\r\n\r\nTypeScript는 규모가 커질수록 더 큰 장점을 가진다.";
-//#endregion
-//#region content/web/browser-rendering.md?raw
-var browser_rendering_default = "---\r\ntitle: 브라우저 렌더링 과정\r\ndescription: 브라우저가 화면을 그리는 과정 정리\r\ndate: 2026-03-28\r\ncategory: web\r\nslug: browser-rendering\r\nthumbnail: /thumbnails/use-memo.png\r\n---\r\n\r\n## 렌더링 과정\r\n\r\n브라우저는 HTML, CSS를 파싱하여 화면을 그린다.\r\n\r\n## 흐름\r\n\r\n1. HTML 파싱 → DOM 생성\r\n2. CSS 파싱 → CSSOM 생성\r\n3. Render Tree 생성\r\n4. Layout\r\n5. Paint\r\n\r\n## 왜 중요한가?\r\n\r\n렌더링 과정을 이해하면 성능 최적화에 도움이 된다.\r\n\r\n## 정리\r\n\r\n렌더링 과정은 웹 성능의 핵심이다.";
+//#region content/web/hosting.md?raw
+var hosting_default = "---\r\ntitle: 호스팅(Hosting)이란 무엇인가\r\ndescription: 웹 호스팅의 개념과 역할, 그리고 다양한 호스팅 방식에 대한 정리\r\ndate: 2026-04-10\r\ncategory: web\r\nslug: hosting\r\nthumbnail: /thumbnails/hosting.png\r\n---\r\n\r\n![호스팅(Hosting)](/thumbnails/hosting.png)\r\n\r\n## 호스팅(Hosting)\r\n\r\n호스팅은 웹사이트 또는 애플리케이션을 인터넷에서 접근 가능하도록 서버에 저장하고 제공하는 서비스다.\r\n\r\n개발자가 만든 웹사이트는 기본적으로 로컬 컴퓨터에 존재하므로 외부에서 접근할 수 없고, 24시간 켜져 있지도 않다. 반면, 서버는 항상 켜져 있는 특징이 있다. 따라서 웹사이트를 서비스하려면 인터넷에 연결된 서버 컴퓨터에 파일들을 올려야 한다.\r\n\r\n즉, 사용자가 브라우저를 통해 요청을 보냈을 때 그 요청에 응답할 수 있는 파일이 위치한 곳이 서버이며, 이 서버 공간을 제공하는게 호스팅이다.\r\n\r\n### 호스팅의 핵심 역할\r\n\r\n호스팅은 단순히 파일을 저장하는 것이 아니라, 다음과 같은 역할을 수행한다.\r\n\r\n#### 파일 저장 및 제공\r\n\r\nHTML, CSS, JS, 이미지 파일 등을 저장하고 사용자가 브라우저에서 요청을 보내면 해당 파일을 반환한다.\r\n\r\n#### 서버 실행 환경 제공\r\n\r\n사용자의 요청(로그인, 검색 등)을 처리할 수 있는 컴퓨팅 엔진(CPU, 메모리 등)이 돌아가는 환경을 제공하여 프로그램이 실제로 동작하게 만든다.\r\n\r\n#### 데이터베이스 연결\r\n\r\n많은 서비스들은 사용자의 정보, 게시글 등 데이터를 다룬다. 호스팅은 이런 데이터들을 자체 제공하기도 하지만 데이터의 양이 방대해지면 호스팅 서버와 데이터베이스 서버를 분리해서 사용할 수도 있다. 이 데이터베이스와 프로그램이 원활하게 대화할 수 있도록 연결하고 관리한다.\r\n\r\n#### 네트워크 및 보안 처리\r\n\r\n호스팅 서비스는 아래와 같은 인프라 관리를 대신해준다.\r\n\r\n- 보안 통신 (HTTPS/SSL)\r\n  \r\n  데이터 전송 시 암호화를 적용하는 SSL 인증서 설정을 관리하여 사용자 정보를 안전하게 보호해준다.\r\n\r\n- 접근 제어 (방화벽)\r\n  \r\n  허가되지 않은 비정상적인 접근을 차단하여 서버 내부의 데이터를 안전하게 지켜준다.\r\n\r\n- 공격 방어 (DDoS 방어)\r\n  \r\n  서버를 마비시키기 위해 대량의 가짜 트래픽을 보내는 DDoS 공격을 감지하고 차단한다.\r\n\r\n- 데이터 흐름 관리 (트래픽 처리)\r\n  \r\n  사용자가 몰릴 때 데이터 전송이 원활하게 이루어지도록 네트워크 대역폭을 조절하고 최적화한다.\r\n\r\n### 호스팅 종류\r\n\r\n#### 웹호스팅 (공유 호스팅)\r\n\r\n여러 웹사이트가 하나의 서버 자원(컴퓨팅 엔진(CPU, 메모리 등))을 함께 사용하는 방식이다.\r\n\r\n- 장점 : 비용이 매우 저렴하고 초보자도 쉽게 사용할 수 있다.\r\n\r\n- 단점 : 다른 사이트의 트래픽 급증 시 내 사이트도 느려질 수 있다.\r\n\r\n- 적합한 경우 : 소규모 블로그, 개인 포트폴리오, 초기 프로젝트\r\n\r\n#### 전용 호스팅 (서버 호스팅)\r\n\r\n서버 전체를 단독으로 사용하는 방식이다.\r\n\r\n- 장점 : 성능과 보안이 안정적이며, 서버 설정을 자유롭게 구성할 수 있다.\r\n\r\n- 단점 : 비용이 상대적으로 높고 직접 유지보수를 해야 한다.\r\n\r\n- 적합한 경우 : 백엔드 서버 운영, 대규모 트래픽 서비스, 금융·의료 등 높은 보안 요구 서비스\r\n\r\n#### 클라우드 호스팅\r\n\r\n클라우드 호스팅은 여러 서버를 하나의 인프라처럼 사용하여 유연하게 확장 가능한 방식이다.\r\n\r\n- 장점 : 트래픽에 따라 자원을 유연하게 확장/축소 가능하다.\r\n\r\n- 단점 : 사용량에 따라 비용 예측이 어려울 수 있다.\r\n\r\n- 적합한 경우 : 트래픽 변동이 큰 서비스, 스타트업, 엔터프라이즈\r\n\r\n#### 서버리스 호스팅\r\n\r\n서버리스 호스팅이란 서버를 직접 관리하지 않고, 요청이 발생할 때만 함수 단위로 코드를 실행하는 호스팅 방식이다.\r\n\r\n- 장점 : 배포가 매우 간편하며, 서버 관리 및 설정 등 복잡한 인프라 지식 없이도 바로 서비스를 운영할 수 있다.\r\n\r\n- 단점 : 오랫동안 호출되지 않다가 다시 실행될 때 발생하는 약간의 지연 시간으로 인한 초기 지연이 발생할 수 있고, 실행 시간 제한 및 서버 환경에 대한 제어가 제한적이다.\r\n\r\n- 적합한 경우 : Next.js 같은 프레임워크 기반 서비스, 간단한 API 서버, 이벤트 기반 처리";
 //#endregion
 //#region src/lib/notes.ts
 var categories$3 = [
@@ -106,13 +94,7 @@ function isNoteCategory$2(value) {
 *        "/content/javascript/array-map.md": "markdown 전체 문자열"
 *      }
 */
-var noteFiles = /* @__PURE__ */ Object.assign({
-	"/content/javascript/js-closure.md": js_closure_default,
-	"/content/nextjs/next-routing.md": next_routing_default,
-	"/content/react/use-memo.md": use_memo_default,
-	"/content/typescript/ts-basic.md": ts_basic_default,
-	"/content/web/browser-rendering.md": browser_rendering_default
-});
+var noteFiles = /* @__PURE__ */ Object.assign({ "/content/web/hosting.md": hosting_default });
 /**
 * frontmatter 한 줄을 파싱하는 함수
 * 
@@ -212,131 +194,6 @@ function getNoteByCategoryAndSlug(category, slug) {
 	return getAllNoteDetails().find((note) => note.category === category && note.slug === slug);
 }
 //#endregion
-//#region src/components/common/PageMeta.tsx
-var SITE_NAME$1 = "junn.dev";
-var SITE_URL$1 = "https://junn.dev";
-var DEFAULT_OG_IMAGE$1 = "/og-image.png";
-function upsertMeta(selector, create, update) {
-	let element = document.head.querySelector(selector);
-	if (!element) {
-		element = create();
-		document.head.appendChild(element);
-	}
-	update(element);
-}
-function PageMeta({ title, description, path = "/", image = DEFAULT_OG_IMAGE$1, type = "website" }) {
-	const fullTitle = title === SITE_NAME$1 ? SITE_NAME$1 : `${title} | ${SITE_NAME$1}`;
-	const canonicalUrl = `${SITE_URL$1}${path}`;
-	const imageUrl = `${SITE_URL$1}${image}`;
-	useLayoutEffect(() => {
-		document.title = fullTitle;
-		upsertMeta("link[rel=\"canonical\"]", () => {
-			const link = document.createElement("link");
-			link.setAttribute("rel", "canonical");
-			return link;
-		}, (el) => {
-			el.setAttribute("href", canonicalUrl);
-		});
-		const metaEntries = [
-			[
-				"meta[name=\"description\"]",
-				"name",
-				"description"
-			],
-			[
-				"meta[name=\"theme-color\"]",
-				"name",
-				"theme-color"
-			],
-			[
-				"meta[property=\"og:type\"]",
-				"property",
-				"og:type"
-			],
-			[
-				"meta[property=\"og:title\"]",
-				"property",
-				"og:title"
-			],
-			[
-				"meta[property=\"og:description\"]",
-				"property",
-				"og:description"
-			],
-			[
-				"meta[property=\"og:url\"]",
-				"property",
-				"og:url"
-			],
-			[
-				"meta[property=\"og:image\"]",
-				"property",
-				"og:image"
-			],
-			[
-				"meta[property=\"og:locale\"]",
-				"property",
-				"og:locale"
-			],
-			[
-				"meta[property=\"og:site_name\"]",
-				"property",
-				"og:site_name"
-			],
-			[
-				"meta[name=\"twitter:card\"]",
-				"name",
-				"twitter:card"
-			],
-			[
-				"meta[name=\"twitter:title\"]",
-				"name",
-				"twitter:title"
-			],
-			[
-				"meta[name=\"twitter:description\"]",
-				"name",
-				"twitter:description"
-			],
-			[
-				"meta[name=\"twitter:image\"]",
-				"name",
-				"twitter:image"
-			]
-		];
-		const values = {
-			description,
-			"theme-color": "#242424",
-			"og:type": type,
-			"og:title": fullTitle,
-			"og:description": description,
-			"og:url": canonicalUrl,
-			"og:image": imageUrl,
-			"og:locale": "ko_KR",
-			"og:site_name": SITE_NAME$1,
-			"twitter:card": "summary_large_image",
-			"twitter:title": fullTitle,
-			"twitter:description": description,
-			"twitter:image": imageUrl
-		};
-		for (const [selector, attrName, attrValue] of metaEntries) upsertMeta(selector, () => {
-			const meta = document.createElement("meta");
-			meta.setAttribute(attrName, attrValue);
-			return meta;
-		}, (el) => {
-			el.setAttribute(attrName, attrValue);
-			el.setAttribute("content", values[attrValue]);
-		});
-	}, [
-		fullTitle,
-		description,
-		canonicalUrl,
-		imageUrl,
-		type
-	]);
-	return null;
-}
-//#endregion
 //#region src/pages/HomePage.tsx
 var categoryLabelMap$3 = {
 	javascript: "JavaScript",
@@ -347,11 +204,7 @@ var categoryLabelMap$3 = {
 	ai: "AI"
 };
 function HomePage() {
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "junn.dev",
-		description: "프론트엔드 개발자로 성장하기 위해 JavaScript, TypeScript, React, Next.js, Web, AI 관련 학습 내용을 기록합니다.",
-		path: "/"
-	}), /* @__PURE__ */ jsxs("section", {
+	return /* @__PURE__ */ jsxs("section", {
 		className: "home",
 		children: [
 			/* @__PURE__ */ jsx("h2", {
@@ -446,7 +299,7 @@ function HomePage() {
 				})]
 			})
 		]
-	})] });
+	});
 }
 //#endregion
 //#region src/components/notes/NoteFilter.tsx
@@ -530,11 +383,7 @@ function NotesPage() {
 		if (selectedCategory === "all") return getAllNotes();
 		return getNotesByCategory(selectedCategory);
 	}, [selectedCategory]);
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "Notes",
-		description: "JavaScript, TypeScript, React, Next.js, Web, AI 관련 학습 내용을 정리한 노트 목록 페이지입니다.",
-		path: "/notes"
-	}), /* @__PURE__ */ jsxs("section", {
+	return /* @__PURE__ */ jsxs("section", {
 		className: "notes",
 		children: [
 			/* @__PURE__ */ jsx("h2", {
@@ -548,7 +397,7 @@ function NotesPage() {
 			}),
 			/* @__PURE__ */ jsx(NoteList, { notes: filteredNotes })
 		]
-	})] });
+	});
 }
 //#endregion
 //#region src/pages/NoteDetailPage.tsx
@@ -573,11 +422,7 @@ function isNoteCategory$1(value) {
 }
 function NoteDetailPage() {
 	const { category, slug } = useParams();
-	if (!category || !slug) return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "잘못된 접근",
-		description: "잘못된 경로로 접근한 페이지입니다.",
-		path: "/notes"
-	}), /* @__PURE__ */ jsxs("section", {
+	if (!category || !slug) return /* @__PURE__ */ jsxs("section", {
 		className: "invalid-access",
 		children: [/* @__PURE__ */ jsx("h1", {
 			className: "invalid-access__title",
@@ -587,12 +432,8 @@ function NoteDetailPage() {
 			className: "back-link",
 			children: "← 목록으로 돌아가기"
 		})]
-	})] });
-	if (!isNoteCategory$1(category)) return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "유효하지 않은 카테고리",
-		description: "유효하지 않은 카테고리 경로입니다.",
-		path: "/notes"
-	}), /* @__PURE__ */ jsxs("section", {
+	});
+	if (!isNoteCategory$1(category)) return /* @__PURE__ */ jsxs("section", {
 		className: "invalid-category",
 		children: [
 			/* @__PURE__ */ jsx("h1", {
@@ -609,13 +450,9 @@ function NoteDetailPage() {
 				children: "← 목록으로 돌아가기"
 			})
 		]
-	})] });
+	});
 	const note = getNoteByCategoryAndSlug(category, slug);
-	if (!note) return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "존재하지 않은 노트",
-		description: "요청한 게시글을 찾을 수 없습니다.",
-		path: "/notes"
-	}), /* @__PURE__ */ jsxs("section", {
+	if (!note) return /* @__PURE__ */ jsxs("section", {
 		className: "note-empty",
 		children: [
 			/* @__PURE__ */ jsx("h1", {
@@ -632,14 +469,8 @@ function NoteDetailPage() {
 				children: "← 목록으로 돌아가기"
 			})
 		]
-	})] });
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: note.title,
-		description: note.description,
-		path: `/notes/${note.category}/${note.slug}`,
-		image: note.thumbnail,
-		type: "article"
-	}), /* @__PURE__ */ jsx("section", {
+	});
+	return /* @__PURE__ */ jsx("section", {
 		className: "note-detail",
 		children: /* @__PURE__ */ jsxs("article", {
 			className: "note-detail__article",
@@ -669,16 +500,12 @@ function NoteDetailPage() {
 				})
 			]
 		})
-	})] });
+	});
 }
 //#endregion
 //#region src/pages/NotFoundPage.tsx
 function NotFoundPage() {
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsx(PageMeta, {
-		title: "404 Not Found",
-		description: "요청한 페이지를 찾을 수 없습니다.",
-		path: useLocation().pathname
-	}), /* @__PURE__ */ jsxs("section", {
+	return /* @__PURE__ */ jsxs("section", {
 		className: "not-found",
 		children: [
 			/* @__PURE__ */ jsx("p", {
@@ -706,7 +533,7 @@ function NotFoundPage() {
 				})]
 			})
 		]
-	})] });
+	});
 }
 //#endregion
 //#region src/app/routes.tsx

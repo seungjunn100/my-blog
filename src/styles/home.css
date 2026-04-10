@@ -27,6 +27,7 @@
   .home-notes__recent-item {
     list-style: circle;
     list-style-type: circle;
+    list-style-position: outside;
 
     .home-notes__recent-inner {
       display: flex;
