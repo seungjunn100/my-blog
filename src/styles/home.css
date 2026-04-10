@@ -19,13 +19,15 @@
 }
 
 .home-notes__recent-list {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
   padding-left: 1.7rem;
 
   .home-notes__recent-item {
-    list-style: circle outside;
+    list-style: circle;
+    margin-bottom: .6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     .home-notes__recent-inner {
       display: flex;
