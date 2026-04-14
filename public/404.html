@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="/404.css" />
     <title>404 Not Found</title>
@@ -18,10 +18,10 @@
           <nav className="site-header__nav">
             <ul className="site-header__ul">
               <li className="site-header__list">
-                <NavLink to="/" className="site-header__link">Home</NavLink>
+                <a href="/" className="site-header__link">Home</a>
               </li>
               <li className="site-header__list">
-                <NavLink to="/notes" className="site-header__link">Notes</NavLink>
+                <a href="/notes" className="site-header__link">Notes</a>
               </li>
             </ul>
           </nav>
@@ -34,8 +34,8 @@
           <p className="not-found__description">입력한 주소가 잘못되었거나, 존재하지 않거나, 삭제되었거나, 이동된 페이지일 수 있습니다.</p>
 
           <div className="not-found__links">
-            <Link to="/" className="back-link">← Home</Link>
-            <Link to="/notes" className="back-link">← Notes</Link>
+            <a href="/" className="back-link">← Home</a>
+            <a href="/notes" className="back-link">← Notes</a>
           </div>
         </section>
       </main>
