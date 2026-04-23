@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { getNoteByCategoryAndSlug } from "../lib/notes";
 import { NoteItemCategory } from "../types/note";
 import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
 
 const categories: NoteItemCategory[] = [
   "javascript",
@@ -71,7 +72,7 @@ export default function NoteDetailPage() {
         </header>
 
         <div className="markdown-body">
-          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{note.content}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeHighlight, rehypeRaw]}>{note.content}</ReactMarkdown>
         </div>
 
         <Link to="/notes" className="back-link">← 목록으로 돌아가기</Link>
