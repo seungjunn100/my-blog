@@ -140,9 +140,18 @@
   font-size: var(--font-size-lg);
 }
 
+.markdown-body p {
+  color: var(--color-text-soft);
+}
+
 .markdown-body ul,
 .markdown-body ol {
   padding-left: 1.7rem;
+}
+
+.markdown-body ul li,
+.markdown-body ol li {
+  color: var(--color-text-soft);
 }
 
 .markdown-body ul li {
@@ -168,10 +177,13 @@
   border-left: 0.25rem solid #3a3a3a;
   border-radius: 0 0.75rem 0.75rem 0;
   background-color: var(--color-surface);
-  color: var(--color-text-muted);
 
   blockquote {
     margin-top: 1.25rem;
+  }
+
+  p {
+    color: var(--color-text-muted);
   }
 }
 
@@ -190,7 +202,7 @@
 }
 
 .markdown-body pre {
-  padding: 0.4rem 0.8rem;
+  padding: 1rem 1.25rem;
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.75rem;
   background-color: #202020;
