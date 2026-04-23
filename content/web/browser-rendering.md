@@ -98,7 +98,6 @@ thumbnail: /thumbnails/browser-rendering.png
 
 <p align="center">
   <img src="/images/dom-tree.png" alt="DOM Tree" />
-  <br />
   <small>
     출처: <a href="https://hangem-study.readthedocs.io/en/latest/front_interview/browser-rendering/">Browser Rendering - Front Study</a>
   </small>
@@ -122,7 +121,6 @@ p span { display: none; }
 
 <p align="center">
   <img src="/images/cssom-tree.png" alt="CSSOM Tree" />
-  <br />
   <small>
     출처: <a href="https://hangem-study.readthedocs.io/en/latest/front_interview/browser-rendering/">Browser Rendering - Front Study</a>
   </small>
@@ -136,7 +134,6 @@ DOM과 CSSOM이 준비되면 브라우저는 이를 결합해 Render 트리를 �
 
 <p align="center">
   <img src="/images/render-tree.png" alt="Render Tree" />
-  <br />
   <small>
     출처: <a href="https://hangem-study.readthedocs.io/en/latest/front_interview/browser-rendering/">Browser Rendering - Front Study</a>
   </small>
