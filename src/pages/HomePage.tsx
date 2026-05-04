@@ -51,9 +51,8 @@ export default function HomePage() {
       <section className="home-links">
         <h3 className="home-links__title">Links</h3>
         <ul className="home-links__list">
-          <li className="home-links__item"><Link to="https://www.notion.so/191931a2ff5e801f9867f5e3248f3210" target="_blank" className="home-links__link"><span className="home-links__icon">📄</span>이력서</Link></li>
           <li className="home-links__item"><Link to="https://github.com/seungjunn100" target="_blank" className="home-links__link"><span className="home-links__icon">🐙</span>깃허브</Link></li>
-          <li className="home-links__item"><Link to="https://github.com/seungjunn100" target="_blank" className="home-links__link"><span className="home-links__icon">✨</span>포트폴리오</Link></li>
+          <li className="home-links__item"><Link to="https://seungjunn100.github.io/portfolio/" target="_blank" className="home-links__link"><span className="home-links__icon">✨</span>포트폴리오</Link></li>
         </ul>
       </section>
     </section>
