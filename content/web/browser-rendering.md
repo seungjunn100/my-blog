@@ -266,7 +266,7 @@ async 속성을 사용하면 스크립트를 비동기적으로 로드하기 때
 <script defer src="script.js"></script>
 ```
 
-![defer 속성 파싱](/images/parsing-async.png)
+![defer 속성 파싱](/images/parsing-defer.png)
 
 defer 속성을 사용하면 스크립트를 비동기적으로 로드하되, HTML 파싱이 완료된 후 실행된다.
 
